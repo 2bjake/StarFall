@@ -15,6 +15,7 @@ class GameScene: SKScene {
     private let motionQueue = OperationQueue()
 
     private let starTexture = SKTexture(imageNamed: "star")
+    private var starBuffer = FixedSizeBuffer<SKNode>(size: 50)
 
     override func didMove(to view: SKView) {
         physicsBody = SKPhysicsBody(edgeLoopFrom: frame)
@@ -37,6 +38,10 @@ class GameScene: SKScene {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else { return }
 
-        scene?.addChild(makeStarAt(touch.location(in: self)))
+        let newStar = makeStarAt(touch.location(in: self))
+        if let oldStar = starBuffer.replaceAppend(newStar) {
+            oldStar.removeFromParent()
+        }
+        scene?.addChild(newStar)
     }
 }
