@@ -15,20 +15,22 @@ class GameViewController: UIViewController {
     var scene: GameScene!
 
     @IBAction func pinchHandler(_ recognizer: UIPinchGestureRecognizer) {
-        let viewPosition = recognizer.location(in: view)
-        let scenePosition = scene.convertPoint(fromView: viewPosition)
-        let direction: GameScene.PinchDirection = recognizer.velocity > 0 ? .out : .in
+        guard let pinchEvent = GameScene.PinchEvent(recognizer.state) else { return }
 
-        switch recognizer.state {
-        case .began:
-            scene.pinchBeganAt(scenePosition, direction: direction)
-        case .changed:
-            scene.pinchChangedAt(scenePosition, direction: direction)
-        case .ended:
-            scene.pinchEndedAt(scenePosition, direction: direction)
-        default:
-            break
+        let viewPosition = recognizer.location(in: view)
+
+        var touchDistance: CGFloat?
+        if recognizer.numberOfTouches >= 2 {
+            let largestPossibleTouch = sqrt(pow(scene.size.height, 2) + pow(scene.size.width, 2))
+            let touchOne = recognizer.location(ofTouch: 0, in: view)
+            let touchTwo = recognizer.location(ofTouch: 1, in: view)
+            touchDistance = sqrt(pow(touchOne.x - touchTwo.x, 2) + pow(touchOne.y - touchTwo.y, 2)) / largestPossibleTouch
         }
+
+        scene.pinchEvent(pinchEvent,
+                         inSceneAt: scene.convertPoint(fromView: viewPosition),
+                         velocity: recognizer.velocity,
+                         distance: touchDistance)
     }
 
     override func viewDidLoad() {
