@@ -14,7 +14,7 @@ private let gravity = 9.8
 private let pinchFieldStrength = Float(15)
 private let maxNumStars = 50
 private let starWidthPercentage = CGFloat(1.0 / 12)
-private let ejectVelocity = CGFloat(30)
+private let ejectVelocity = CGFloat(25)
 
 class GameScene: SKScene {
     private let motionManager = CMMotionManager()
@@ -96,12 +96,30 @@ class GameScene: SKScene {
         }
     }
 
+    private func randomEjectionPosition() -> CGPoint {
+        enum Side: CaseIterable { case left, right, top, bottom }
+
+        switch Side.allCases.randomElement()! {
+        case .left:
+            return .init(x: -starLength, y: CGFloat.random(in: 0..<size.height))
+        case .right:
+            return .init(x: size.width + starLength, y: CGFloat.random(in: 0..<size.height))
+        case .top:
+            return .init(x: CGFloat.random(in: 0..<size.width), y: size.height + starLength)
+        case .bottom:
+            return .init(x: CGFloat.random(in: 0..<size.width), y: -starLength)
+        }
+    }
+
     private func ejectStars() {
         print("ejecting stars")
-        // turn off collision check between stars and frame loop (see rain in RainCat for that)
-        // give stars random high ejection impulses
-        // clear out starBuffer
-        // remove star nodes from scene
+        starBuffer.removeAll().forEach { starNode in
+            starNode.physicsBody = nil
+            starNode.run(.move(to: randomEjectionPosition(), duration: 0.25)) {
+                starNode.removeFromParent()
+                starNode.removeAllActions()
+            }
+        }
     }
 
     func pinchEvent(_ event: PinchEvent, inSceneAt positionInScene: CGPoint, velocity: CGFloat, distance: CGFloat?) {

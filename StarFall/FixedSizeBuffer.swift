@@ -26,4 +26,11 @@ struct FixedSizeBuffer<Element> {
         backIndex = (backIndex + 1) % maxSize
         return previousValue
     }
+
+    mutating func removeAll() -> [Element] {
+        let oldBuffer = buffer
+        buffer = Array.init(repeating: nil, count: maxSize)
+        backIndex = 0
+        return oldBuffer.compactMap { $0 }
+    }
 }
