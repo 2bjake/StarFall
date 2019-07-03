@@ -9,13 +9,13 @@
 import Foundation
 
 struct FixedSizeBuffer<Element> {
-    private var buffer: Array<Element?>
+    private var buffer: [Element?]
     private let maxSize: Int
     private var backIndex = 0 // index "one off the end"
 
     init(size: Int) {
         maxSize = size
-        buffer = Array<Element?>.init(repeating: nil, count: size)
+        buffer = .init(repeating: nil, count: size)
     }
 
     @discardableResult

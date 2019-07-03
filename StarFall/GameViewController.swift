@@ -15,11 +15,11 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let view = self.view as! SKView? {
-            let scene = GameScene(size: view.frame.size)
-            view.presentScene(scene)
-            view.ignoresSiblingOrder = true
-        }
+        guard let view = self.view as! SKView? else { return }
+
+        let scene = GameScene(size: view.frame.size)
+        view.presentScene(scene)
+        view.ignoresSiblingOrder = true
     }
 
     override var prefersStatusBarHidden: Bool {

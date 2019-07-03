@@ -7,25 +7,29 @@
 //
 
 import SpriteKit
-import GameplayKit
 import CoreMotion
+
+//constants
+private let gravity = 9.8
+private let maxNumStars = 50
+private let starWidthPercentage = CGFloat(1.0 / 12)
 
 class GameScene: SKScene {
     private let motionManager = CMMotionManager()
     private let motionQueue = OperationQueue()
 
     private let starTexture = SKTexture(imageNamed: "star")
-    private var starBuffer = FixedSizeBuffer<SKNode>(size: 50)
+    private var starBuffer = FixedSizeBuffer<SKNode>(size: maxNumStars)
 
-    private lazy var starLength = CGFloat(size.width / 12)
+    private lazy var starLength = size.width * starWidthPercentage
     private lazy var starSize = CGSize(width: starLength, height: starLength)
 
     override func didMove(to view: SKView) {
         physicsBody = SKPhysicsBody(edgeLoopFrom: frame)
-        motionManager.startDeviceMotionUpdates(using: .xArbitraryZVertical, to: motionQueue) { [weak physicsWorld] motion, error in
-            if let physicsWorld = physicsWorld, let motion = motion {
-                physicsWorld.gravity = CGVector(dx: 9.8 * motion.gravity.x, dy: 9.8 * motion.gravity.y)
-            }
+
+        motionManager.startDeviceMotionUpdates(using: .xArbitraryZVertical, to: motionQueue) { [weak physicsWorld] motion, _ in
+            guard let motion = motion else { return }
+            physicsWorld?.gravity = CGVector(dx: gravity * motion.gravity.x, dy: gravity * motion.gravity.y)
         }
     }
 
@@ -37,7 +41,7 @@ class GameScene: SKScene {
         return starNode
     }
 
-    func clampLocationForTouch(_ touch: UITouch) -> CGPoint {
+    private func clampedLocationForTouch(_ touch: UITouch) -> CGPoint {
         var location = touch.location(in: self)
 
         func clamp(_ value: inout CGFloat, max: CGFloat) {
@@ -57,7 +61,7 @@ class GameScene: SKScene {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else { return }
 
-        let location = clampLocationForTouch(touch)
+        let location = clampedLocationForTouch(touch)
         guard nodes(at: location).isEmpty else { return } //clicked on star, not adding another
 
         let newStar = makeStarAt(location)
