@@ -70,4 +70,21 @@ class GameScene: SKScene {
         }
         scene?.addChild(newStar)
     }
+
+    enum PinchDirection {
+        case `in`
+        case out
+    }
+
+    func pinchBeganAt(_ positionInScene: CGPoint, direction: PinchDirection) {
+        print("pinch \(direction) began at \(positionInScene)")
+    }
+
+    func pinchChangedAt(_ positionInScene: CGPoint, direction: PinchDirection) {
+        print("pinch \(direction) change at \(positionInScene)")
+    }
+
+    func pinchEndedAt(_ positionInScene: CGPoint, direction: PinchDirection) {
+        print("pinch \(direction) ended at \(positionInScene)")
+    }
 }
