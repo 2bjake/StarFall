@@ -30,7 +30,7 @@ class GameScene: SKScene {
 
     override func didMove(to view: SKView) {
         physicsBody = SKPhysicsBody(edgeLoopFrom: frame)
-        pinchField.categoryBitMask = BitMask(.pinchField)
+        pinchField.categoryBitMask = .pinchField
         pinchField.falloff = 0
         pinchField.isEnabled = false
         addChild(pinchField)
@@ -46,8 +46,8 @@ class GameScene: SKScene {
         starNode.colorBlendFactor = 0.75
         starNode.position = position
         starNode.physicsBody = SKPhysicsBody(texture: starTexture, size: starSize)
-        starNode.physicsBody?.categoryBitMask = BitMask(.star)
-        starNode.physicsBody?.fieldBitMask = BitMask(.pinchField)
+        starNode.physicsBody?.categoryBitMask = .star
+        starNode.physicsBody?.fieldBitMask = .pinchField
         return starNode
     }
 

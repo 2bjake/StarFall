@@ -16,8 +16,7 @@
 		238C3E1F22CBE0F60077CA2B /* StarFallTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238C3E1E22CBE0F60077CA2B /* StarFallTests.swift */; };
 		238C3E2A22CBE0F60077CA2B /* StarFallUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238C3E2922CBE0F60077CA2B /* StarFallUITests.swift */; };
 		238C3E3822CC0B2D0077CA2B /* FixedSizeBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238C3E3722CC0B2D0077CA2B /* FixedSizeBuffer.swift */; };
-		238C3E3A22CCFDA30077CA2B /* PhysicsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238C3E3922CCFDA30077CA2B /* PhysicsCategory.swift */; };
-		238C3E3C22CCFDB70077CA2B /* PhysicsCategory+StarFall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238C3E3B22CCFDB70077CA2B /* PhysicsCategory+StarFall.swift */; };
+		238C3E3A22CCFDA30077CA2B /* BitMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238C3E3922CCFDA30077CA2B /* BitMask.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,8 +52,7 @@
 		238C3E2922CBE0F60077CA2B /* StarFallUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarFallUITests.swift; sourceTree = "<group>"; };
 		238C3E2B22CBE0F60077CA2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		238C3E3722CC0B2D0077CA2B /* FixedSizeBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedSizeBuffer.swift; sourceTree = "<group>"; };
-		238C3E3922CCFDA30077CA2B /* PhysicsCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicsCategory.swift; sourceTree = "<group>"; };
-		238C3E3B22CCFDB70077CA2B /* PhysicsCategory+StarFall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhysicsCategory+StarFall.swift"; sourceTree = "<group>"; };
+		238C3E3922CCFDA30077CA2B /* BitMask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitMask.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,8 +111,7 @@
 				238C3E1222CBE0F60077CA2B /* LaunchScreen.storyboard */,
 				238C3E1522CBE0F60077CA2B /* Info.plist */,
 				238C3E3722CC0B2D0077CA2B /* FixedSizeBuffer.swift */,
-				238C3E3922CCFDA30077CA2B /* PhysicsCategory.swift */,
-				238C3E3B22CCFDB70077CA2B /* PhysicsCategory+StarFall.swift */,
+				238C3E3922CCFDA30077CA2B /* BitMask.swift */,
 			);
 			path = StarFall;
 			sourceTree = "<group>";
@@ -268,10 +265,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				238C3E3C22CCFDB70077CA2B /* PhysicsCategory+StarFall.swift in Sources */,
 				238C3E0A22CBE0F40077CA2B /* GameScene.swift in Sources */,
 				238C3E0C22CBE0F40077CA2B /* GameViewController.swift in Sources */,
-				238C3E3A22CCFDA30077CA2B /* PhysicsCategory.swift in Sources */,
+				238C3E3A22CCFDA30077CA2B /* BitMask.swift in Sources */,
 				238C3E3822CC0B2D0077CA2B /* FixedSizeBuffer.swift in Sources */,
 				238C3E0422CBE0F40077CA2B /* AppDelegate.swift in Sources */,
 			);
