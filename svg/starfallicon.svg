@@ -21,6 +21,18 @@
      id="defs2">
     <linearGradient
        inkscape:collect="always"
+       id="linearGradient911">
+      <stop
+         style="stop-color:#ffff25;stop-opacity:1"
+         offset="0"
+         id="stop907" />
+      <stop
+         style="stop-color:#ffffc2;stop-opacity:1"
+         offset="1"
+         id="stop909" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
        id="linearGradient4525">
       <stop
          style="stop-color:#00002a;stop-opacity:1"
@@ -58,6 +70,15 @@
        y1="46.174999"
        x2="52.387501"
        y2="116.025" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient911"
+       id="linearGradient913"
+       x1="358.02206"
+       y1="113.33935"
+       x2="521.62604"
+       y2="256.392"
+       gradientUnits="userSpaceOnUse" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -67,10 +88,10 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.35355339"
-     inkscape:cx="282.88564"
+     inkscape:cx="285.71407"
      inkscape:cy="503.67886"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="g5986"
      showgrid="false"
      showborder="true"
      inkscape:window-width="1680"
@@ -87,7 +108,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -192,7 +213,7 @@
            id="rect4518" />
         <path
            sodipodi:type="star"
-           style="opacity:1;fill:#ffff3f;fill-opacity:1;stroke-width:0.26458332"
+           style="opacity:1;fill:#ff3fad;fill-opacity:1;stroke-width:0.26458332"
            id="path4529"
            sodipodi:sides="5"
            sodipodi:cx="-34.785034"
@@ -219,29 +240,11 @@
            d="M -17.4625,46.174999 H 52.387499 V 116.025 H -17.4625 Z"
            style="fill:url(#linearGradient4527);fill-opacity:1;stroke-width:0.26458332"
            inkscape:connector-curvature="0" />
-        <path
-           transform="matrix(0.88132889,0.14460788,-0.14028883,0.90846225,69.96707,-52.348276)"
-           inkscape:transform-center-y="-2.7195225"
-           inkscape:transform-center-x="-0.0066323881"
-           d="m -12.841359,176.67266 -20.123186,-10.44956 -15.909196,16.15653 3.719716,-22.36738 -20.281984,-10.1379 22.422097,-3.37424 3.37424,-22.4221 10.137902,20.28199 22.3673795,-3.71972 -16.1565295,15.9092 z"
-           inkscape:randomized="0"
-           inkscape:rounded="0"
-           inkscape:flatsided="false"
-           sodipodi:arg2="1.4137167"
-           sodipodi:arg1="0.78539816"
-           sodipodi:r2="11.63739"
-           sodipodi:r1="31.033043"
-           sodipodi:cy="154.72899"
-           sodipodi:cx="-34.785034"
-           sodipodi:sides="5"
-           id="path5950"
-           style="opacity:1;fill:#ffff3f;fill-opacity:1;stroke-width:0.26458332"
-           sodipodi:type="star" />
       </g>
       <path
-         transform="matrix(1.2061999,0.16431377,-0.16431377,1.2061999,283.32198,-82.008411)"
-         inkscape:transform-center-y="-11.134042"
-         inkscape:transform-center-x="0.20061982"
+         transform="matrix(1.035019,0.14775507,-0.14099476,1.0846452,351.73603,-53.020166)"
+         inkscape:transform-center-y="-10.012009"
+         inkscape:transform-center-x="0.17217533"
          d="m 500.24344,262.1427 c -2.30381,2.23028 -57.77745,-20.38729 -60.95219,-19.9371 -3.17474,0.45019 -50.17331,37.59873 -53.00634,36.09688 -2.83304,-1.50185 1.53525,-61.24964 0.12605,-64.12988 -1.40921,-2.88024 -51.26293,-36.099 -50.71004,-39.25747 0.55289,-3.15848 58.72629,-17.46707 61.03009,-19.69735 2.30381,-2.23027 18.49108,-59.909141 21.66582,-60.359332 3.17474,-0.450191 34.75959,50.454402 37.59262,51.956252 2.83303,1.50185 62.69104,-0.92688 64.10025,1.95336 1.4092,2.88024 -37.24369,48.64959 -37.79658,51.80807 -0.55289,3.15847 20.25412,59.3363 17.95032,61.56657 z"
          inkscape:randomized="0"
          inkscape:rounded="0.05"
@@ -254,7 +257,7 @@
          sodipodi:cx="432.14316"
          sodipodi:sides="5"
          id="path5977"
-         style="opacity:1;fill:#ffff3f;fill-opacity:1;stroke-width:0.26458335"
+         style="opacity:1;fill:url(#linearGradient913);fill-opacity:1;stroke-width:0.26458335"
          sodipodi:type="star" />
     </g>
   </g>
