@@ -1,6 +1,6 @@
 //
 //  BitMask.swift
-//  StarFall
+//  Starfallia
 //
 //  Created by Jake Foster on 6/25/19.
 //  Copyright © 2019 Jake Foster. All rights reserved.

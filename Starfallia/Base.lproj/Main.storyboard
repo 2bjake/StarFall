@@ -13,7 +13,7 @@
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="StarFall" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="Starfallia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,6 +22,7 @@
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="gxv-PR-gPn" appends="YES" id="Ab5-OB-fpa"/>
+                            <outletCollection property="gestureRecognizers" destination="oXE-Jc-9YW" appends="YES" id="P4Z-1P-CBn"/>
                         </connections>
                     </view>
                 </viewController>
@@ -31,6 +32,11 @@
                         <action selector="pinchHandler:" destination="BV1-FR-VrT" id="5bX-IT-98k"/>
                     </connections>
                 </pinchGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="oXE-Jc-9YW">
+                    <connections>
+                        <action selector="swipeHandler:" destination="BV1-FR-VrT" id="tYn-P9-J4w"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
         </scene>
     </scenes>

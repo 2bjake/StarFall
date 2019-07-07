@@ -1,4 +1,4 @@
 {
-    "set" : "../StarFall/Assets.xcassets/AppIcon.appiconset",
-    "source" : "starfallicon.svg"
+    "set" : "../Starfallia/Assets.xcassets/AppIcon.appiconset",
+    "source" : "StarfalliaIcon.svg"
 }

@@ -13,8 +13,8 @@
 		238C3E0F22CBE0F40077CA2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 238C3E0D22CBE0F40077CA2B /* Main.storyboard */; };
 		238C3E1122CBE0F60077CA2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 238C3E1022CBE0F60077CA2B /* Assets.xcassets */; };
 		238C3E1422CBE0F60077CA2B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 238C3E1222CBE0F60077CA2B /* LaunchScreen.storyboard */; };
-		238C3E1F22CBE0F60077CA2B /* StarFallTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238C3E1E22CBE0F60077CA2B /* StarFallTests.swift */; };
-		238C3E2A22CBE0F60077CA2B /* StarFallUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238C3E2922CBE0F60077CA2B /* StarFallUITests.swift */; };
+		238C3E1F22CBE0F60077CA2B /* StarfalliaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238C3E1E22CBE0F60077CA2B /* StarfalliaTests.swift */; };
+		238C3E2A22CBE0F60077CA2B /* StarfalliaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238C3E2922CBE0F60077CA2B /* StarfalliaUITests.swift */; };
 		238C3E3822CC0B2D0077CA2B /* FixedSizeBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238C3E3722CC0B2D0077CA2B /* FixedSizeBuffer.swift */; };
 		238C3E3A22CCFDA30077CA2B /* BitMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238C3E3922CCFDA30077CA2B /* BitMask.swift */; };
 /* End PBXBuildFile section */
@@ -25,19 +25,19 @@
 			containerPortal = 238C3DF822CBE0F40077CA2B /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 238C3DFF22CBE0F40077CA2B;
-			remoteInfo = StarFall;
+			remoteInfo = Starfallia;
 		};
 		238C3E2622CBE0F60077CA2B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 238C3DF822CBE0F40077CA2B /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 238C3DFF22CBE0F40077CA2B;
-			remoteInfo = StarFall;
+			remoteInfo = Starfallia;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		238C3E0022CBE0F40077CA2B /* StarFall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarFall.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		238C3E0022CBE0F40077CA2B /* Starfallia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Starfallia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		238C3E0322CBE0F40077CA2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		238C3E0922CBE0F40077CA2B /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		238C3E0B22CBE0F40077CA2B /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -45,11 +45,11 @@
 		238C3E1022CBE0F60077CA2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		238C3E1322CBE0F60077CA2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		238C3E1522CBE0F60077CA2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		238C3E1A22CBE0F60077CA2B /* StarFallTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarFallTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		238C3E1E22CBE0F60077CA2B /* StarFallTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarFallTests.swift; sourceTree = "<group>"; };
+		238C3E1A22CBE0F60077CA2B /* StarfalliaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarfalliaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		238C3E1E22CBE0F60077CA2B /* StarfalliaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarfalliaTests.swift; sourceTree = "<group>"; };
 		238C3E2022CBE0F60077CA2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		238C3E2522CBE0F60077CA2B /* StarFallUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarFallUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		238C3E2922CBE0F60077CA2B /* StarFallUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarFallUITests.swift; sourceTree = "<group>"; };
+		238C3E2522CBE0F60077CA2B /* StarfalliaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarfalliaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		238C3E2922CBE0F60077CA2B /* StarfalliaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarfalliaUITests.swift; sourceTree = "<group>"; };
 		238C3E2B22CBE0F60077CA2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		238C3E3722CC0B2D0077CA2B /* FixedSizeBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedSizeBuffer.swift; sourceTree = "<group>"; };
 		238C3E3922CCFDA30077CA2B /* BitMask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitMask.swift; sourceTree = "<group>"; };
@@ -80,27 +80,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2372868322D2733900B04F70 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		238C3DF722CBE0F40077CA2B = {
 			isa = PBXGroup;
 			children = (
-				238C3E0222CBE0F40077CA2B /* StarFall */,
-				238C3E1D22CBE0F60077CA2B /* StarFallTests */,
-				238C3E2822CBE0F60077CA2B /* StarFallUITests */,
+				238C3E0222CBE0F40077CA2B /* Starfallia */,
+				238C3E1D22CBE0F60077CA2B /* StarfalliaTests */,
+				238C3E2822CBE0F60077CA2B /* StarfalliaUITests */,
 				238C3E0122CBE0F40077CA2B /* Products */,
+				2372868322D2733900B04F70 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		238C3E0122CBE0F40077CA2B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				238C3E0022CBE0F40077CA2B /* StarFall.app */,
-				238C3E1A22CBE0F60077CA2B /* StarFallTests.xctest */,
-				238C3E2522CBE0F60077CA2B /* StarFallUITests.xctest */,
+				238C3E0022CBE0F40077CA2B /* Starfallia.app */,
+				238C3E1A22CBE0F60077CA2B /* StarfalliaTests.xctest */,
+				238C3E2522CBE0F60077CA2B /* StarfalliaUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		238C3E0222CBE0F40077CA2B /* StarFall */ = {
+		238C3E0222CBE0F40077CA2B /* Starfallia */ = {
 			isa = PBXGroup;
 			children = (
 				238C3E0322CBE0F40077CA2B /* AppDelegate.swift */,
@@ -113,33 +121,33 @@
 				238C3E3722CC0B2D0077CA2B /* FixedSizeBuffer.swift */,
 				238C3E3922CCFDA30077CA2B /* BitMask.swift */,
 			);
-			path = StarFall;
+			path = Starfallia;
 			sourceTree = "<group>";
 		};
-		238C3E1D22CBE0F60077CA2B /* StarFallTests */ = {
+		238C3E1D22CBE0F60077CA2B /* StarfalliaTests */ = {
 			isa = PBXGroup;
 			children = (
-				238C3E1E22CBE0F60077CA2B /* StarFallTests.swift */,
+				238C3E1E22CBE0F60077CA2B /* StarfalliaTests.swift */,
 				238C3E2022CBE0F60077CA2B /* Info.plist */,
 			);
-			path = StarFallTests;
+			path = StarfalliaTests;
 			sourceTree = "<group>";
 		};
-		238C3E2822CBE0F60077CA2B /* StarFallUITests */ = {
+		238C3E2822CBE0F60077CA2B /* StarfalliaUITests */ = {
 			isa = PBXGroup;
 			children = (
-				238C3E2922CBE0F60077CA2B /* StarFallUITests.swift */,
+				238C3E2922CBE0F60077CA2B /* StarfalliaUITests.swift */,
 				238C3E2B22CBE0F60077CA2B /* Info.plist */,
 			);
-			path = StarFallUITests;
+			path = StarfalliaUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		238C3DFF22CBE0F40077CA2B /* StarFall */ = {
+		238C3DFF22CBE0F40077CA2B /* Starfallia */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 238C3E2E22CBE0F60077CA2B /* Build configuration list for PBXNativeTarget "StarFall" */;
+			buildConfigurationList = 238C3E2E22CBE0F60077CA2B /* Build configuration list for PBXNativeTarget "Starfallia" */;
 			buildPhases = (
 				238C3DFC22CBE0F40077CA2B /* Sources */,
 				238C3DFD22CBE0F40077CA2B /* Frameworks */,
@@ -149,14 +157,14 @@
 			);
 			dependencies = (
 			);
-			name = StarFall;
-			productName = StarFall;
-			productReference = 238C3E0022CBE0F40077CA2B /* StarFall.app */;
+			name = Starfallia;
+			productName = Starfallia;
+			productReference = 238C3E0022CBE0F40077CA2B /* Starfallia.app */;
 			productType = "com.apple.product-type.application";
 		};
-		238C3E1922CBE0F60077CA2B /* StarFallTests */ = {
+		238C3E1922CBE0F60077CA2B /* StarfalliaTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 238C3E3122CBE0F60077CA2B /* Build configuration list for PBXNativeTarget "StarFallTests" */;
+			buildConfigurationList = 238C3E3122CBE0F60077CA2B /* Build configuration list for PBXNativeTarget "StarfalliaTests" */;
 			buildPhases = (
 				238C3E1622CBE0F60077CA2B /* Sources */,
 				238C3E1722CBE0F60077CA2B /* Frameworks */,
@@ -167,14 +175,14 @@
 			dependencies = (
 				238C3E1C22CBE0F60077CA2B /* PBXTargetDependency */,
 			);
-			name = StarFallTests;
-			productName = StarFallTests;
-			productReference = 238C3E1A22CBE0F60077CA2B /* StarFallTests.xctest */;
+			name = StarfalliaTests;
+			productName = StarfalliaTests;
+			productReference = 238C3E1A22CBE0F60077CA2B /* StarfalliaTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		238C3E2422CBE0F60077CA2B /* StarFallUITests */ = {
+		238C3E2422CBE0F60077CA2B /* StarfalliaUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 238C3E3422CBE0F60077CA2B /* Build configuration list for PBXNativeTarget "StarFallUITests" */;
+			buildConfigurationList = 238C3E3422CBE0F60077CA2B /* Build configuration list for PBXNativeTarget "StarfalliaUITests" */;
 			buildPhases = (
 				238C3E2122CBE0F60077CA2B /* Sources */,
 				238C3E2222CBE0F60077CA2B /* Frameworks */,
@@ -185,9 +193,9 @@
 			dependencies = (
 				238C3E2722CBE0F60077CA2B /* PBXTargetDependency */,
 			);
-			name = StarFallUITests;
-			productName = StarFallUITests;
-			productReference = 238C3E2522CBE0F60077CA2B /* StarFallUITests.xctest */;
+			name = StarfalliaUITests;
+			productName = StarfalliaUITests;
+			productReference = 238C3E2522CBE0F60077CA2B /* StarfalliaUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -202,6 +210,11 @@
 				TargetAttributes = {
 					238C3DFF22CBE0F40077CA2B = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+						};
 					};
 					238C3E1922CBE0F60077CA2B = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -213,7 +226,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 238C3DFB22CBE0F40077CA2B /* Build configuration list for PBXProject "StarFall" */;
+			buildConfigurationList = 238C3DFB22CBE0F40077CA2B /* Build configuration list for PBXProject "Starfallia" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -226,9 +239,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				238C3DFF22CBE0F40077CA2B /* StarFall */,
-				238C3E1922CBE0F60077CA2B /* StarFallTests */,
-				238C3E2422CBE0F60077CA2B /* StarFallUITests */,
+				238C3DFF22CBE0F40077CA2B /* Starfallia */,
+				238C3E1922CBE0F60077CA2B /* StarfalliaTests */,
+				238C3E2422CBE0F60077CA2B /* StarfalliaUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -277,7 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				238C3E1F22CBE0F60077CA2B /* StarFallTests.swift in Sources */,
+				238C3E1F22CBE0F60077CA2B /* StarfalliaTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,7 +298,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				238C3E2A22CBE0F60077CA2B /* StarFallUITests.swift in Sources */,
+				238C3E2A22CBE0F60077CA2B /* StarfalliaUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,12 +307,12 @@
 /* Begin PBXTargetDependency section */
 		238C3E1C22CBE0F60077CA2B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 238C3DFF22CBE0F40077CA2B /* StarFall */;
+			target = 238C3DFF22CBE0F40077CA2B /* Starfallia */;
 			targetProxy = 238C3E1B22CBE0F60077CA2B /* PBXContainerItemProxy */;
 		};
 		238C3E2722CBE0F60077CA2B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 238C3DFF22CBE0F40077CA2B /* StarFall */;
+			target = 238C3DFF22CBE0F40077CA2B /* Starfallia */;
 			targetProxy = 238C3E2622CBE0F60077CA2B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -446,12 +459,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 42ETQ4A89Z;
-				INFOPLIST_FILE = StarFall/Info.plist;
+				INFOPLIST_FILE = Starfallia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jake.StarFall;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sidebuild.Starfallia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -464,12 +477,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 42ETQ4A89Z;
-				INFOPLIST_FILE = StarFall/Info.plist;
+				INFOPLIST_FILE = Starfallia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jake.StarFall;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sidebuild.Starfallia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -483,17 +496,17 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 42ETQ4A89Z;
-				INFOPLIST_FILE = StarFallTests/Info.plist;
+				INFOPLIST_FILE = StarfalliaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jake.StarFallTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jake.StarfalliaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StarFall.app/StarFall";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Starfallia.app/Starfallia";
 			};
 			name = Debug;
 		};
@@ -504,17 +517,17 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 42ETQ4A89Z;
-				INFOPLIST_FILE = StarFallTests/Info.plist;
+				INFOPLIST_FILE = StarfalliaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jake.StarFallTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jake.StarfalliaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StarFall.app/StarFall";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Starfallia.app/Starfallia";
 			};
 			name = Release;
 		};
@@ -524,17 +537,17 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 42ETQ4A89Z;
-				INFOPLIST_FILE = StarFallUITests/Info.plist;
+				INFOPLIST_FILE = StarfalliaUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jake.StarFallUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jake.StarfalliaUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = StarFall;
+				TEST_TARGET_NAME = Starfallia;
 			};
 			name = Debug;
 		};
@@ -544,24 +557,24 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 42ETQ4A89Z;
-				INFOPLIST_FILE = StarFallUITests/Info.plist;
+				INFOPLIST_FILE = StarfalliaUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jake.StarFallUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jake.StarfalliaUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = StarFall;
+				TEST_TARGET_NAME = Starfallia;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		238C3DFB22CBE0F40077CA2B /* Build configuration list for PBXProject "StarFall" */ = {
+		238C3DFB22CBE0F40077CA2B /* Build configuration list for PBXProject "Starfallia" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				238C3E2C22CBE0F60077CA2B /* Debug */,
@@ -570,7 +583,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		238C3E2E22CBE0F60077CA2B /* Build configuration list for PBXNativeTarget "StarFall" */ = {
+		238C3E2E22CBE0F60077CA2B /* Build configuration list for PBXNativeTarget "Starfallia" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				238C3E2F22CBE0F60077CA2B /* Debug */,
@@ -579,7 +592,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		238C3E3122CBE0F60077CA2B /* Build configuration list for PBXNativeTarget "StarFallTests" */ = {
+		238C3E3122CBE0F60077CA2B /* Build configuration list for PBXNativeTarget "StarfalliaTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				238C3E3222CBE0F60077CA2B /* Debug */,
@@ -588,7 +601,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		238C3E3422CBE0F60077CA2B /* Build configuration list for PBXNativeTarget "StarFallUITests" */ = {
+		238C3E3422CBE0F60077CA2B /* Build configuration list for PBXNativeTarget "StarfalliaUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				238C3E3522CBE0F60077CA2B /* Debug */,

@@ -1,6 +1,6 @@
 //
-//  StarFallUITests.swift
-//  StarFallUITests
+//  StarfalliaUITests.swift
+//  StarfalliaUITests
 //
 //  Created by Jake Foster on 7/2/19.
 //  Copyright © 2019 Jake Foster. All rights reserved.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class StarFallUITests: XCTestCase {
+class StarfalliaUITests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.

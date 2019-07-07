@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:StarFall.xcodeproj">
+      location = "self:/Users/jake/workspace/Starfallia/Starfallia.xcodeproj">
    </FileRef>
 </Workspace>

@@ -1,6 +1,6 @@
 //
 //  GameViewController.swift
-//  StarFall
+//  Starfallia
 //
 //  Created by Jake Foster on 7/2/19.
 //  Copyright © 2019 Jake Foster. All rights reserved.
@@ -13,6 +13,10 @@ import GameplayKit
 class GameViewController: UIViewController {
 
     var scene: GameScene!
+
+    @IBAction func swipeHandler(_ recognizer: UISwipeGestureRecognizer) {
+
+    }
 
     @IBAction func pinchHandler(_ recognizer: UIPinchGestureRecognizer) {
         guard let pinchEvent = GameScene.PinchEvent(recognizer.state) else { return }
