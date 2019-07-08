@@ -69,9 +69,9 @@ class GameViewController: UIViewController {
             let touchOne = recognizer.location(ofTouch: 0, in: view)
             let touchTwo = recognizer.location(ofTouch: 1, in: view)
             let touchDistance = sqrt(pow(touchOne.x - touchTwo.x, 2) + pow(touchOne.y - touchTwo.y, 2)) / largestPossibleTouch
-            scene.pullStarsToward(scene.convertPoint(fromView: viewPosition), diameter: touchDistance)
+            scene.enableGravityWellAt(scene.convertPoint(fromView: viewPosition), diameter: touchDistance)
         case .ended, .cancelled:
-            scene.releaseStars()
+            scene.disableGravityWell()
             if recognizer.velocity > ejectPinchVelocity {
                 scene.ejectStarsToward(.all)
             }

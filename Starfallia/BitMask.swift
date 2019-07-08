@@ -16,5 +16,5 @@ extension BitMask {
     }
 
     static let star = BitMask(shift: 1)
-    static let pinchField = BitMask(shift: 2)
+    static let gravityWellField = BitMask(shift: 2)
 }

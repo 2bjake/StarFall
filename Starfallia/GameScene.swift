@@ -11,7 +11,7 @@ import CoreMotion
 
 //constants
 private let gravity = 9.8
-private let pinchFieldStrength = Float(15)
+private let gravityWellStrength = Float(15)
 private let nudgeStrength = CGFloat(20)
 private let maxNumStars = 50
 private let starWidthPercentage = CGFloat(1.0 / 12)
@@ -28,14 +28,14 @@ class GameScene: SKScene {
     private lazy var starLength = size.width * starWidthPercentage
     private lazy var starSize = CGSize(width: starLength, height: starLength)
 
-    private let pinchField = SKFieldNode.radialGravityField()
+    private let gravityWellField = SKFieldNode.radialGravityField()
 
     override func didMove(to view: SKView) {
         physicsBody = SKPhysicsBody(edgeLoopFrom: frame)
-        pinchField.categoryBitMask = .pinchField
-        pinchField.falloff = 0
-        pinchField.isEnabled = false
-        addChild(pinchField)
+        gravityWellField.categoryBitMask = .gravityWellField
+        gravityWellField.falloff = 0
+        gravityWellField.isEnabled = false
+        addChild(gravityWellField)
 
         motionManager.startDeviceMotionUpdates(using: .xArbitraryZVertical, to: motionQueue) { [weak physicsWorld] motion, _ in
             guard let motion = motion else { return }
@@ -49,7 +49,7 @@ class GameScene: SKScene {
         starNode.position = position
         starNode.physicsBody = SKPhysicsBody(texture: starTexture, size: starSize)
         starNode.physicsBody?.categoryBitMask = .star
-        starNode.physicsBody?.fieldBitMask = .pinchField
+        starNode.physicsBody?.fieldBitMask = .gravityWellField
         return starNode
     }
 
@@ -144,13 +144,13 @@ class GameScene: SKScene {
         starBuffer.allElements.forEach { $0.physicsBody?.applyImpulse(impulse) }
     }
 
-    func pullStarsToward(_ position: CGPoint, diameter: CGFloat) {
-        pinchField.isEnabled = true
-        pinchField.position = position
-        pinchField.strength = pinchFieldStrength - Float(diameter * 10)
+    func enableGravityWellAt(_ position: CGPoint, diameter: CGFloat) {
+        gravityWellField.isEnabled = true
+        gravityWellField.position = position
+        gravityWellField.strength = gravityWellStrength - Float(diameter * 10)
     }
 
-    func releaseStars() {
-        pinchField.isEnabled = false
+    func disableGravityWell() {
+        gravityWellField.isEnabled = false
     }
 }
