@@ -18,18 +18,19 @@ class GameViewController: UIViewController {
 
     var scene: GameScene!
 
-    var lastSwipe: (edge: GameScene.EjectionEdge, time: Date)?
+    var lastSwipe: (edge: GameScene.Edge, time: Date)?
 
-    private func isSecondSwipeToward(_ edge: GameScene.EjectionEdge) -> Bool {
+    private func isSecondSwipeToward(_ edge: GameScene.Edge) -> Bool {
         guard let lastSwipe = lastSwipe else { return false }
         return edge == lastSwipe.edge && Date().timeIntervalSince(lastSwipe.time) < doubleSwipeInterval
     }
 
-    private func handleSwipeToward(_ edge: GameScene.EjectionEdge) {
+    private func handleSwipeToward(_ edge: GameScene.Edge) {
         if isSecondSwipeToward(edge){
-            scene.ejectStars(edge: edge)
+            scene.ejectStarsToward(edge)
             lastSwipe = nil
         } else {
+            scene.nudgeStarsToward(edge)
             lastSwipe = (edge, Date())
         }
     }
@@ -68,11 +69,11 @@ class GameViewController: UIViewController {
             let touchOne = recognizer.location(ofTouch: 0, in: view)
             let touchTwo = recognizer.location(ofTouch: 1, in: view)
             let touchDistance = sqrt(pow(touchOne.x - touchTwo.x, 2) + pow(touchOne.y - touchTwo.y, 2)) / largestPossibleTouch
-            scene.enablePinchField(position: scene.convertPoint(fromView: viewPosition), diameter: touchDistance)
+            scene.pullStarsToward(scene.convertPoint(fromView: viewPosition), diameter: touchDistance)
         case .ended, .cancelled:
-            scene.disablePinchField()
+            scene.releaseStars()
             if recognizer.velocity > ejectPinchVelocity {
-                scene.ejectStars(edge: .all)
+                scene.ejectStarsToward(.all)
             }
         default:
             return

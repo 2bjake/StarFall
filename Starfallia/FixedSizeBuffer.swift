@@ -13,7 +13,14 @@ struct FixedSizeBuffer<Element> {
     private let maxSize: Int
     private var backIndex = 0 // index "one off the end"
 
+    var allElements: [Element] {
+        return buffer.compactMap { $0 }
+    }
+
     init(size: Int) {
+        guard size > 0 else {
+            fatalError("size was \(size) but it must be greater than zero")
+        }
         maxSize = size
         buffer = .init(repeating: nil, count: size)
     }

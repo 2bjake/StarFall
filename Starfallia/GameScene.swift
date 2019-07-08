@@ -12,8 +12,10 @@ import CoreMotion
 //constants
 private let gravity = 9.8
 private let pinchFieldStrength = Float(15)
+private let nudgeStrength = CGFloat(20)
 private let maxNumStars = 50
 private let starWidthPercentage = CGFloat(1.0 / 12)
+private let ejectionDuration = 0.25
 
 
 class GameScene: SKScene {
@@ -81,30 +83,12 @@ class GameScene: SKScene {
         scene?.addChild(newStar)
     }
 
-    enum EjectionEdge {
+    enum Edge {
         case right, left, top, bottom, all
     }
 
-    // slides star directly toward specified edge
-//    private func slideEjectionPosition(from startPosition: CGPoint, toEdge edge: EjectionEdge) -> CGPoint {
-//        var newPosition = startPosition
-//        switch edge {
-//        case .all:
-//            newPosition =  randomEjectionPosition(edge: .all)
-//        case .left:
-//            newPosition.x -= size.width
-//        case .right:
-//            newPosition.x += size.width
-//        case .top:
-//            newPosition.y += size.height
-//        case .bottom:
-//            newPosition.y -= size.height
-//        }
-//        return newPosition
-//    }
-
     // moves star to random spot on specified edge
-    private func randomEjectionPosition(edge: EjectionEdge) -> CGPoint {
+    private func randomEjectionPositionOnEdge(_ edge: Edge) -> CGPoint {
         switch edge {
         case .left:
             return .init(x: -starLength, y: CGFloat.random(in: 0..<size.height))
@@ -115,38 +99,58 @@ class GameScene: SKScene {
         case .bottom:
             return .init(x: CGFloat.random(in: 0..<size.width), y: -starLength)
         case .all:
-            return randomEjectionPosition(edge: [EjectionEdge.left, .right, .top, .bottom].randomElement()!)
+            return randomEjectionPositionOnEdge([.left, .right, .top, .bottom].randomElement()!)
         }
     }
 
-    private func ejectionPosition(from startPosition: CGPoint, toEdge edge: EjectionEdge) -> CGPoint {
-        // slides star straight off specified edge
-        //return slideEjectionPosition(from: startPosition, toEdge: edge)
-
-        // explodes stars to random positions on random edges
-        //return randomEjectionPosition(edge: .all)
-
-        // moves stars to random positions on specified edge
-        return randomEjectionPosition(edge: edge)
+    private func ejectionPosition(from startPosition: CGPoint, onEdge edge: Edge) -> CGPoint {
+        var newPosition = startPosition
+        switch edge {
+        case .all:
+            newPosition =  randomEjectionPositionOnEdge(.all)
+        case .left:
+            newPosition.x -= size.width
+        case .right:
+            newPosition.x += size.width
+        case .top:
+            newPosition.y += size.height
+        case .bottom:
+            newPosition.y -= size.height
+        }
+        return newPosition
     }
 
-    func ejectStars(edge: EjectionEdge) {
+    func ejectStarsToward(_ edge: Edge) {
         starBuffer.removeAll().forEach { starNode in
             starNode.physicsBody = nil
-            starNode.run(.move(to: ejectionPosition(from: starNode.position, toEdge: edge), duration: 0.25)) {
+            starNode.run(.move(to: ejectionPosition(from: starNode.position, onEdge: edge), duration: ejectionDuration)) {
                 starNode.removeFromParent()
                 starNode.removeAllActions()
             }
         }
     }
 
-    func enablePinchField(position: CGPoint, diameter: CGFloat) {
+    func nudgeStarsToward(_ edge: Edge) {
+        var impulse = CGVector(dx: 0, dy: 0)
+        switch edge {
+        case .right: impulse.dx += nudgeStrength
+        case .left: impulse.dx -= nudgeStrength
+        case .top: impulse.dy += nudgeStrength
+        case .bottom: impulse.dy -= nudgeStrength
+        case .all:
+            break // this is meaningless
+        }
+
+        starBuffer.allElements.forEach { $0.physicsBody?.applyImpulse(impulse) }
+    }
+
+    func pullStarsToward(_ position: CGPoint, diameter: CGFloat) {
         pinchField.isEnabled = true
         pinchField.position = position
         pinchField.strength = pinchFieldStrength - Float(diameter * 10)
     }
 
-    func disablePinchField() {
+    func releaseStars() {
         pinchField.isEnabled = false
     }
 }
