@@ -23,6 +23,9 @@
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="gxv-PR-gPn" appends="YES" id="Ab5-OB-fpa"/>
                             <outletCollection property="gestureRecognizers" destination="oXE-Jc-9YW" appends="YES" id="P4Z-1P-CBn"/>
+                            <outletCollection property="gestureRecognizers" destination="4gF-uC-Oud" appends="YES" id="3XQ-h7-yGy"/>
+                            <outletCollection property="gestureRecognizers" destination="74i-Mr-DUy" appends="YES" id="L9G-Bv-uyA"/>
+                            <outletCollection property="gestureRecognizers" destination="DDP-O8-xeb" appends="YES" id="own-ux-Sqn"/>
                         </connections>
                     </view>
                 </viewController>
@@ -32,9 +35,24 @@
                         <action selector="pinchHandler:" destination="BV1-FR-VrT" id="5bX-IT-98k"/>
                     </connections>
                 </pinchGestureRecognizer>
-                <swipeGestureRecognizer direction="right" id="oXE-Jc-9YW">
+                <swipeGestureRecognizer direction="right" id="oXE-Jc-9YW" userLabel="Swipe Right Gesture Recognizer">
                     <connections>
-                        <action selector="swipeHandler:" destination="BV1-FR-VrT" id="tYn-P9-J4w"/>
+                        <action selector="rightSwipeHandler:" destination="BV1-FR-VrT" id="tYn-P9-J4w"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="4gF-uC-Oud" userLabel="Swipe Left Gesture Recognizer">
+                    <connections>
+                        <action selector="leftSwipeHandler:" destination="BV1-FR-VrT" id="ij6-CH-FJE"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="up" id="74i-Mr-DUy" userLabel="Swipe Up Gesture Recognizer">
+                    <connections>
+                        <action selector="upSwipeHandler:" destination="BV1-FR-VrT" id="dv9-03-pE3"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="DDP-O8-xeb" userLabel="Swipe Down Gesture Recognizer">
+                    <connections>
+                        <action selector="downSwipeHandler:" destination="BV1-FR-VrT" id="pvh-8r-rXt"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>

@@ -14,7 +14,7 @@ private let gravity = 9.8
 private let pinchFieldStrength = Float(15)
 private let maxNumStars = 50
 private let starWidthPercentage = CGFloat(1.0 / 12)
-private let ejectVelocity = CGFloat(25)
+
 
 class GameScene: SKScene {
     private let motionManager = CMMotionManager()
@@ -81,25 +81,31 @@ class GameScene: SKScene {
         scene?.addChild(newStar)
     }
 
-    enum PinchEvent {
-        case began, changed, ended, cancelled
-
-        init?(_ state: UIGestureRecognizer.State) {
-            switch state {
-            case .began: self = .began
-            case .changed: self = .changed
-            case .ended: self = .ended
-            case .cancelled: self = .cancelled
-            default:
-                return nil
-            }
-        }
+    enum EjectionEdge {
+        case right, left, top, bottom, all
     }
 
-    private func randomEjectionPosition() -> CGPoint {
-        enum Side: CaseIterable { case left, right, top, bottom }
+    // slides star directly toward specified edge
+//    private func slideEjectionPosition(from startPosition: CGPoint, toEdge edge: EjectionEdge) -> CGPoint {
+//        var newPosition = startPosition
+//        switch edge {
+//        case .all:
+//            newPosition =  randomEjectionPosition(edge: .all)
+//        case .left:
+//            newPosition.x -= size.width
+//        case .right:
+//            newPosition.x += size.width
+//        case .top:
+//            newPosition.y += size.height
+//        case .bottom:
+//            newPosition.y -= size.height
+//        }
+//        return newPosition
+//    }
 
-        switch Side.allCases.randomElement()! {
+    // moves star to random spot on specified edge
+    private func randomEjectionPosition(edge: EjectionEdge) -> CGPoint {
+        switch edge {
         case .left:
             return .init(x: -starLength, y: CGFloat.random(in: 0..<size.height))
         case .right:
@@ -108,36 +114,39 @@ class GameScene: SKScene {
             return .init(x: CGFloat.random(in: 0..<size.width), y: size.height + starLength)
         case .bottom:
             return .init(x: CGFloat.random(in: 0..<size.width), y: -starLength)
+        case .all:
+            return randomEjectionPosition(edge: [EjectionEdge.left, .right, .top, .bottom].randomElement()!)
         }
     }
 
-    private func ejectStars() {
-        print("ejecting stars")
+    private func ejectionPosition(from startPosition: CGPoint, toEdge edge: EjectionEdge) -> CGPoint {
+        // slides star straight off specified edge
+        //return slideEjectionPosition(from: startPosition, toEdge: edge)
+
+        // explodes stars to random positions on random edges
+        //return randomEjectionPosition(edge: .all)
+
+        // moves stars to random positions on specified edge
+        return randomEjectionPosition(edge: edge)
+    }
+
+    func ejectStars(edge: EjectionEdge) {
         starBuffer.removeAll().forEach { starNode in
             starNode.physicsBody = nil
-            starNode.run(.move(to: randomEjectionPosition(), duration: 0.25)) {
+            starNode.run(.move(to: ejectionPosition(from: starNode.position, toEdge: edge), duration: 0.25)) {
                 starNode.removeFromParent()
                 starNode.removeAllActions()
             }
         }
     }
 
-    func pinchEvent(_ event: PinchEvent, inSceneAt positionInScene: CGPoint, velocity: CGFloat, distance: CGFloat?) {
+    func enablePinchField(position: CGPoint, diameter: CGFloat) {
+        pinchField.isEnabled = true
+        pinchField.position = position
+        pinchField.strength = pinchFieldStrength - Float(diameter * 10)
+    }
 
-        switch event {
-        case .began, .changed:
-            pinchField.isEnabled = true
-            pinchField.position = positionInScene
-
-            let strengthModifier = Float(distance ?? 0) * 10
-            pinchField.strength = pinchFieldStrength - strengthModifier
-        case .cancelled:
-            pinchField.isEnabled = false
-        case .ended:
-            pinchField.isEnabled = false
-            if velocity > ejectVelocity {
-                ejectStars()
-            }
-        }
+    func disablePinchField() {
+        pinchField.isEnabled = false
     }
 }

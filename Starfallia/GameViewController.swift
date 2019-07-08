@@ -10,31 +10,73 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
+//contants
+private let ejectPinchVelocity = CGFloat(25)
+private let doubleSwipeInterval = TimeInterval(0.5)
+
 class GameViewController: UIViewController {
 
     var scene: GameScene!
 
-    @IBAction func swipeHandler(_ recognizer: UISwipeGestureRecognizer) {
+    var lastSwipe: (edge: GameScene.EjectionEdge, time: Date)?
 
+    private func isSecondSwipeToward(_ edge: GameScene.EjectionEdge) -> Bool {
+        guard let lastSwipe = lastSwipe else { return false }
+        return edge == lastSwipe.edge && Date().timeIntervalSince(lastSwipe.time) < doubleSwipeInterval
+    }
+
+    private func handleSwipeToward(_ edge: GameScene.EjectionEdge) {
+        if isSecondSwipeToward(edge){
+            scene.ejectStars(edge: edge)
+            lastSwipe = nil
+        } else {
+            lastSwipe = (edge, Date())
+        }
+    }
+
+    @IBAction func leftSwipeHandler(_ recognizer: UISwipeGestureRecognizer) {
+        if recognizer.state == .ended {
+            handleSwipeToward(.left)
+        }
+    }
+
+    @IBAction func rightSwipeHandler(_ recognizer: UISwipeGestureRecognizer) {
+        if recognizer.state == .ended {
+            handleSwipeToward(.right)
+        }
+    }
+
+    @IBAction func upSwipeHandler(_ recognizer: UISwipeGestureRecognizer) {
+        if recognizer.state == .ended {
+            handleSwipeToward(.top)
+        }
+    }
+
+    @IBAction func downSwipeHandler(_ recognizer: UISwipeGestureRecognizer) {
+        if recognizer.state == .ended {
+            handleSwipeToward(.bottom)
+        }
     }
 
     @IBAction func pinchHandler(_ recognizer: UIPinchGestureRecognizer) {
-        guard let pinchEvent = GameScene.PinchEvent(recognizer.state) else { return }
+        switch recognizer.state {
+        case .began, .changed:
+            guard recognizer.numberOfTouches >= 2 else { return }
 
-        let viewPosition = recognizer.location(in: view)
-
-        var touchDistance: CGFloat?
-        if recognizer.numberOfTouches >= 2 {
+            let viewPosition = recognizer.location(in: view)
             let largestPossibleTouch = sqrt(pow(scene.size.height, 2) + pow(scene.size.width, 2))
             let touchOne = recognizer.location(ofTouch: 0, in: view)
             let touchTwo = recognizer.location(ofTouch: 1, in: view)
-            touchDistance = sqrt(pow(touchOne.x - touchTwo.x, 2) + pow(touchOne.y - touchTwo.y, 2)) / largestPossibleTouch
+            let touchDistance = sqrt(pow(touchOne.x - touchTwo.x, 2) + pow(touchOne.y - touchTwo.y, 2)) / largestPossibleTouch
+            scene.enablePinchField(position: scene.convertPoint(fromView: viewPosition), diameter: touchDistance)
+        case .ended, .cancelled:
+            scene.disablePinchField()
+            if recognizer.velocity > ejectPinchVelocity {
+                scene.ejectStars(edge: .all)
+            }
+        default:
+            return
         }
-
-        scene.pinchEvent(pinchEvent,
-                         inSceneAt: scene.convertPoint(fromView: viewPosition),
-                         velocity: recognizer.velocity,
-                         distance: touchDistance)
     }
 
     override func viewDidLoad() {
